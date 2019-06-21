@@ -45,4 +45,5 @@ def create_app(config_name):
     from info.modules.index import inex_blu
     app.register_blueprint(inex_blu)
 
+
     return app
