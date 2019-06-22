@@ -466,3 +466,148 @@ INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 08:11:59] "GET /image_code?image
 INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 08:12:00] "GET /image_code?imageCodeId=23ba5901-58c0-4b3b-9665-e9d562aa6db7 HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 08:12:01] "GET /image_code?imageCodeId=526c0de1-a124-4fa7-819d-1a2de8d7d1e2 HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 08:12:01] "GET /image_code?imageCodeId=ceff5c7f-d4c6-4259-93d3-7ef14c3a4793 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:26] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:31] "GET /image_code?imageCodeId=a8c12d34-a8ee-4b6e-a272-78b45058dce4 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:33] "GET /image_code?imageCodeId=aebe839f-6c67-485f-b6e6-42611315ca24 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:34] "GET /image_code?imageCodeId=5854640c-89b7-44dc-a9c3-4a08e30bd8c8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:34] "GET /image_code?imageCodeId=b61453c8-34c7-4851-8061-118c0708cb17 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:35] "GET /image_code?imageCodeId=b1420c23-713c-46aa-8add-4108acb39811 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:27:36] "GET /image_code?imageCodeId=dc28a709-1b10-4a6d-be2e-a30d1f6dfa26 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:28:03] "GET /image_code?imageCodeId=e8464854-8777-421c-871e-23f7136c3b63 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:28:06] "GET /image_code?imageCodeId=98996c18-2877-4936-8de4-35fdd1396551 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:28:07] "GET /image_code?imageCodeId=c6a5fae2-15dc-4e8a-a243-36d0b95bdc6a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:28:08] "GET /image_code?imageCodeId=474e5b47-269c-4bcc-870b-02fdbe9c70bb HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:28:09] "GET /image_code?imageCodeId=84e64ca1-d3a7-4f91-bb57-6493a70a8e92 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:29:09] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 09:29:09] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:31] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:49] "GET /image_code?imageCodeId=c483eae5-6acd-4628-a227-804a739df572 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:50] "GET /image_code?imageCodeId=93f3da60-4011-4e3b-896e-8bd42a3be65a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:50] "GET /image_code?imageCodeId=1684dc38-9215-4869-8719-3f40f9cd24d7 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:50] "GET /image_code?imageCodeId=07220bd3-f55a-475f-8676-5925572d7a4e HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:51] "GET /image_code?imageCodeId=c133227e-cd3c-4df2-98fc-359a02159622 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:51] "GET /image_code?imageCodeId=c8996eaf-4c3a-4be3-95b5-b873079a3771 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:52] "GET /image_code?imageCodeId=f0148308-c3f9-4c89-95de-5a0ae7deb431 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:52] "GET /image_code?imageCodeId=a993def6-b55c-464f-9619-5507c342188a HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:52] "GET /image_code?imageCodeId=7bb9440c-e0fc-4cc3-9964-f6806c981072 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:52] "GET /image_code?imageCodeId=0d17ddd6-ffa8-494d-bc7e-ec63e83b2343 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 11:16:53] "GET /image_code?imageCodeId=178fa235-0f15-4d85-bd40-e90962cf03e6 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:53:50] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:53:53] "GET /image_code?imageCodeId=8c63d782-fcc8-464d-94e1-24413b1a8e56 HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:55:12] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:56:05] "GET /image_code?imageCodeId=118c2537-0738-4ae9-9334-1502fd0c619d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:56:05] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:56:05] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 14:56:12] "GET /image_code?imageCodeId=91d9239f-d9f3-40ad-83ca-47083f3c15ad HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 15:23:18] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 15:23:21] "GET /image_code?imageCodeId=8f31d499-c4ee-4ff9-ac9c-9654229b8677 HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 15:23:21] "GET /image_code?imageCodeId=4e0f856f-eafe-4b8f-8112-2cc6ea065d1c HTTP/1.1" 404 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:02:10] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:02:14] "GET /image_code?imageCodeId=e8b27565-ddf1-4755-a45a-f5358cd28c20 HTTP/1.1" 404 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:14:40] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:14:52] "GET /image_code?imageCodeId=016d1fdb-fd14-4187-93ee-683ba01f9d1c HTTP/1.1" 404 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:14:52] "GET /static/news/images/shutoff.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:02] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/css/main.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/js/main.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/person01.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/news_pic.jpg HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/person.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/pic_code.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/hit_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /static/news/images/clock.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:03] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:07] "GET /passport/image_code?imageCodeId=1d1e57dc-fad8-4f05-b685-ceb6ee278886 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:07] "GET /static/news/images/shutoff.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:09] "GET /passport/image_code?imageCodeId=8b659334-c63f-4f58-99aa-2a512dabf937 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:10] "GET /passport/image_code?imageCodeId=85ae25a3-d805-404b-8b03-8b8cf796e18c HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 16:15:10] "GET /passport/image_code?imageCodeId=765541ac-e084-40fd-a378-50724ce81d6b HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 18:40:00] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 18:40:04] "GET /passport/image_code?imageCodeId=7ebdf124-15c7-4012-9ad5-66d348658021 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 18:40:05] "GET /passport/image_code?imageCodeId=42568150-2c66-4204-967b-73de2210ea69 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 18:40:05] "GET /passport/image_code?imageCodeId=6b4dad22-a0ed-4808-8940-31b1091957dc HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:50:16] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:50:18] "GET /passport/image_code?imageCodeId=9013adf9-0ec7-48ab-80af-ce2d9a18d74e HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:50:28] "GET /passport/image_code?imageCodeId=db6a0335-1eaa-43ce-a9ed-a2a5b7dcdc69 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:50:41] "GET /passport/image_code?imageCodeId=ab035d69-9383-47c5-98fe-9cccc51d3c3a HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:56:55] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:56:57] "GET /passport/image_code?imageCodeId=162ab0ed-b017-4aae-b5ea-9655196ae82d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/css/reset.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/css/main.css HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/js/jquery-1.12.4.min.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/js/main.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/js/index.js HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/images/logo.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/images/person01.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:07] "GET /static/news/images/news_pic.jpg HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:08] "GET /static/news/images/person.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:08] "GET /static/news/images/pic_code.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:08] "GET /static/news/images/clock.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:08] "GET /static/news/images/hit_icon.png HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:08] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:25] "GET /passport/image_code?imageCodeId=079a3325-c252-4256-8f6f-ae36925ef72b HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:33] "GET /passport/image_code?imageCodeId=61c48c4b-73c9-4365-9af8-ca3a479a3d0d HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 19:57:40] "POST /passport/sms_code HTTP/1.1" 405 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 20:05:59] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 20:06:01] "GET /passport/image_code?imageCodeId=1a8225da-e7fe-4b6a-8338-b417b7485df8 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 20:06:15] "GET /passport/image_code?imageCodeId=64028454-67de-4488-a5aa-b65695b5dd23 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 20:06:15] "GET /passport/image_code?imageCodeId=2171e3b1-2ce9-45df-ae16-9566818cc22d HTTP/1.1" 200 -
+DEBUG views.py:69 短线验证码内容是: 358430
+INFO _internal.py:88 127.0.0.1 - - [22/Jun/2019 20:06:22] "POST /passport/sms_code HTTP/1.1" 200 -
