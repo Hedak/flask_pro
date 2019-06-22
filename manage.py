@@ -1,7 +1,6 @@
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from info import db, create_app,models
-
+from info import db, create_app, models
 
 app = create_app('development')
 # 设置项目运行参数

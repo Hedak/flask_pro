@@ -44,6 +44,8 @@ def create_app(config_name):
     # 注册蓝图
     from info.modules.index import inex_blu
     app.register_blueprint(inex_blu)
-
+    # 图片验证码
+    from info.modules.passport import passport_blu
+    app.register_blueprint(passport_blu)
 
     return app

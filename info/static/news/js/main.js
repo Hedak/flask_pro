@@ -157,9 +157,9 @@ function generateImageCode() {
 //    浏览器要发送图片验证码请求/image_code?imageCodeId=xxx
     imageCodeId = generateUUID()
 //    生成url
-    var url = "/image_code?image_code?imageCodeId=" + imageCodeId
+    var url = '/image_code?imageCodeId=' + imageCodeId
 //    给指定img标签设置src，设置了地址后，img标签就回去向这个地址发起请求，请求图片
-    $(".get_pic_code").attr("src",url)
+    $(".get_pic_code").attr("src", url)
 
 }
 
