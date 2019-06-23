@@ -33,13 +33,20 @@ $(function () {
 
 
     // 点击输入框，提示文字上移
-    $('.form_group').on('click focusin', function () {
-        $(this).children('.input_tip').animate({
-            'top': -5,
-            'font-size': 12
-        }, 'fast').siblings('input').focus().parent().addClass('hotline');
+    // $('.form_group').on('click focusin', function () {
+    //     $(this).children('.input_tip').animate({
+    //         'top': -5,
+    //         'font-size': 12
+    //     }, 'fast').siblings('input').focus().parent().addClass('hotline');
+    // })
+    $('.form_group').on('click', function () {
+        $(this).children('input').focus()
     })
 
+    $('.form_group input').on('focusin', function () {
+        $(this).siblings('.input_tip').animate({'top': -5, 'font-size': 12}, 'fast')
+        $(this).parent().addClass('hotline');
+    })
     // 输入框失去焦点，如果输入框为空，则提示文字下移
     $('.form_group input').on('blur focusout', function () {
         $(this).parent().removeClass('hotline');
@@ -146,7 +153,33 @@ $(function () {
         }
 
         // 发起注册请求
+        var params = {
+            "mobile": mobile,
+            "smscode": smscode,
+            "password": password
 
+
+        }
+        $.ajax({
+            url: "/passport/register",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify(params),
+            headers:{
+                "X-CSRFToken":getCookie('csrf_token')
+            },
+            success: function (response) {
+                if (response.errno == "0") {
+                    location.reload()
+                } else {
+                    alert(response.errmsg)
+                    $("#register-password-err").html(response.errmsg)
+                    $("#register-password-err").show()
+
+                }
+
+            }
+        })
     })
 })
 
@@ -211,7 +244,7 @@ function sendSMSCode() {
 
             } else {
                 alert(response.errmsg)
-                $(".get_code").attr("onclick","sendSMSCode();");
+                $(".get_code").attr("onclick", "sendSMSCode();");
             }
 
         }
