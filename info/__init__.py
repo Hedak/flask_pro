@@ -3,6 +3,8 @@ from flask import Flask
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
+from flask_wtf.csrf import generate_csrf
+
 from config import config
 import logging
 from logging.handlers import RotatingFileHandler
@@ -41,6 +43,13 @@ def create_app(config_name):
     CSRFProtect(app)
     # 设置session保护指定位置
     Session(app)
+
+    @app.after_request
+    def after_request(response):
+        csrf_token = generate_csrf()
+        response.set_cookie("csrf_token", csrf_token)
+        return response
+
     # 注册蓝图
     from info.modules.index import inex_blu
     app.register_blueprint(inex_blu)

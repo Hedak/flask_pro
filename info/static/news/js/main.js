@@ -106,19 +106,44 @@ $(function () {
     $(".login_form_con").submit(function (e) {
         e.preventDefault()
         var mobile = $(".login_form #mobile").val()
-        var password = $(".login_form #password").val()
+        var passport= $(".login_form #password").val()
 
         if (!mobile) {
             $("#login-mobile-err").show();
             return;
         }
 
-        if (!password) {
+        if (!passport) {
             $("#login-password-err").show();
             return;
         }
 
         // 发起登录请求
+        var params={
+            "mobile":mobile,
+            "passport":passport
+        }
+        $.ajax({
+            url:"/passport/login",
+            type:"post",
+            contentType:"application/json",
+            headers: {
+                "X-CSRFToken":getCookie("csrf_token")
+            },
+            data:JSON.stringify(params),
+            success:function (response) {
+                if(response.errno=="0"){
+                    location.reload()
+                }else {
+                    alert(response.errmsg)
+                    $("#login-password-err").html(response.errmsg)
+                    $("#login-password-err").show()
+
+                }
+
+            }
+        })
+
     })
 
 
@@ -225,6 +250,9 @@ function sendSMSCode() {
         url: "/passport/sms_code",
         type: "post",
         data: JSON.stringify(params),
+        headers: {
+            "X-CSRFToken": getCookie('csrf_token')
+        },
         contentType: "application/json",
         success: function (response) {
             if (response.errno == "0") {

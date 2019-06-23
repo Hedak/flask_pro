@@ -132,7 +132,7 @@ def register():
 
 
 # 登录
-@passport_blu("/login", methods=["POST"])
+@passport_blu.route("/login", methods=["POST"])
 def login():
     params_dict = request.json
     mobile = params_dict.get("mobile")
