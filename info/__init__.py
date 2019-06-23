@@ -11,6 +11,8 @@ from logging.handlers import RotatingFileHandler
 
 from redis import StrictRedis
 
+from info.utils.common import do_index_class
+
 db = SQLAlchemy()
 redis_store = None  # type:StrictRedis
 
@@ -43,6 +45,8 @@ def create_app(config_name):
     CSRFProtect(app)
     # 设置session保护指定位置
     Session(app)
+
+    app.add_template_filter(do_index_class, "indexClass")
 
     @app.after_request
     def after_request(response):
