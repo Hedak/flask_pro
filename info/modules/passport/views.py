@@ -159,3 +159,12 @@ def login():
     user.last_login = datetime.now()
 
     return jsonify(errno=RET.OK, errmsg="登陆成功")
+
+
+# 退出登录
+@passport_blu.route("/logout")
+def logout():
+    session.pop("user_id", None)
+    session.pop("mobile", None)
+    session.pop("nick_name", None)
+    return jsonify(errno=RET.OK, errmsg="退出成功")

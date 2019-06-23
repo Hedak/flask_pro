@@ -106,7 +106,7 @@ $(function () {
     $(".login_form_con").submit(function (e) {
         e.preventDefault()
         var mobile = $(".login_form #mobile").val()
-        var passport= $(".login_form #password").val()
+        var passport = $(".login_form #password").val()
 
         if (!mobile) {
             $("#login-mobile-err").show();
@@ -119,22 +119,22 @@ $(function () {
         }
 
         // 发起登录请求
-        var params={
-            "mobile":mobile,
-            "passport":passport
+        var params = {
+            "mobile": mobile,
+            "passport": passport
         }
         $.ajax({
-            url:"/passport/login",
-            type:"post",
-            contentType:"application/json",
+            url: "/passport/login",
+            type: "post",
+            contentType: "application/json",
             headers: {
-                "X-CSRFToken":getCookie("csrf_token")
+                "X-CSRFToken": getCookie("csrf_token")
             },
-            data:JSON.stringify(params),
-            success:function (response) {
-                if(response.errno=="0"){
+            data: JSON.stringify(params),
+            success: function (response) {
+                if (response.errno == "0") {
                     location.reload()
-                }else {
+                } else {
                     alert(response.errmsg)
                     $("#login-password-err").html(response.errmsg)
                     $("#login-password-err").show()
@@ -190,8 +190,8 @@ $(function () {
             type: "post",
             contentType: "application/json",
             data: JSON.stringify(params),
-            headers:{
-                "X-CSRFToken":getCookie('csrf_token')
+            headers: {
+                "X-CSRFToken": getCookie('csrf_token')
             },
             success: function (response) {
                 if (response.errno == "0") {
@@ -276,9 +276,16 @@ function sendSMSCode() {
             }
 
         }
-
     })
 
+
+}
+
+function logout() {
+    $.get("/passport/logout", function (resp) {
+        location.reload()
+
+    })
 
 }
 
