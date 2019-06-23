@@ -1282,3 +1282,12 @@ INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 20:03:53] "GET /passport/logout 
 INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 20:03:53] "GET / HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 20:04:01] "POST /passport/login HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 20:04:01] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-283-877
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 21:15:37] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 21:15:57] "POST /passport/login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 21:15:57] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 21:15:58] "GET /passport/logout HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [23/Jun/2019 21:15:58] "GET / HTTP/1.1" 200 -

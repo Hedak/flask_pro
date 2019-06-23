@@ -134,6 +134,7 @@ def register():
 # 登录
 @passport_blu.route("/login", methods=["POST"])
 def login():
+    # 获取数据
     params_dict = request.json
     mobile = params_dict.get("mobile")
     passport = params_dict.get("passport")
@@ -144,6 +145,7 @@ def login():
         return jsonify(errno=RET.PARAMERR, errmsg="手机号码格式不正确")
 
     try:
+        # 根据电话号码查询用户
         user = User.query.filter(User.mobile == mobile).first()
     except Exception as e:
         current_app.logger.error(e)
@@ -152,10 +154,11 @@ def login():
         return jsonify(errno=RET.NODATA, errmsg="用户不存在")
     if not user.check_password(passport):
         return jsonify(errno=RET.PWDERR, errmsg="用户名或者密码输入错误")
+    # 设置session
     session["user_id"] = user.id
     session["mobile"] = user.mobile
     session["nick_name"] = user.nick_name
-
+    # 设置最后登录为登录时的当前时间
     user.last_login = datetime.now()
 
     return jsonify(errno=RET.OK, errmsg="登陆成功")
@@ -164,6 +167,7 @@ def login():
 # 退出登录
 @passport_blu.route("/logout")
 def logout():
+    # 删除session值，返回主页，为未登录的状态
     session.pop("user_id", None)
     session.pop("mobile", None)
     session.pop("nick_name", None)
