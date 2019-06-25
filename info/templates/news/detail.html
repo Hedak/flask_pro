@@ -19,15 +19,20 @@
         </div>
             {{ data.news.content|safe }}
 
-        <a href="javascript:;" class="collection block-center">收藏</a>
-        <a href="javascript:;" class="collected block-center" style="display: none"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
+    <a href="javascript:;" class="collected block-center" data-newid="{{ data.news.id }}" style="display: {% if data.is_collected %} block
+    {% else %} none {% endif %};"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
+    <a href="javascript:;" class="collection block-center" data-newid="{{ data.news.id }}" style="display: {% if data.is_collected %} none
+        {% else %} block {% endif %};">收藏</a>
+
+{#        <a href="javascript:;" class="collection block-center">收藏</a>#}
+{#        <a href="javascript:;" class="collected block-center" style="display: none"><span class="out">已收藏</span><span class="over">取消收藏</span></a>#}
 
 
          {% if data.user %}
         <form action="" class="comment_form" data-newsid="{{ data.news.id }}">
             <div class="person_pic">
-                <img src="{% if data.user_info.avatar_url %}
-                    {{ data.user_info.avatar_url }}
+                <img src="{% if data.user.avatar_url %}
+                    {{ data.user.avatar_url }}
                 {% else %}
                     ../static/news/images/person01.png
                 {% endif %}" alt="用户图标">

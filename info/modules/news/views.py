@@ -52,10 +52,20 @@ def news_detail(news_id):
     # 更新新闻的点击次数
     news.clicks += 1
 
+    # 判断用户是否收藏当前新闻，true为收藏
+    is_collected = False
+
+    if user:
+        # 判断用户是否收藏当前新闻，如果收藏：
+        # collection_news 后面可以不用加all,因为sqlalchemy会在使用的时候去自动加载
+        if news in user.collection_news:
+            is_collected = True
+
     data = {
         "user": user.to_dict() if user else None,
         "news_dict_list": news_dict_list,
-        "news": news.to_dict()
+        "news": news.to_dict(),
+        "is_collected": is_collected
 
     }
     return render_template("news/detail.html", data=data)
