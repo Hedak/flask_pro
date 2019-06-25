@@ -64,15 +64,15 @@ def index():
     for news in news_list:
         news_dict_list.append(news.to_basic_dict())
 
-    categories=Category.query.all()
+    categories = Category.query.all()
 
-    category_list=[]
-    for category in  categories:
+    category_list = []
+    for category in categories:
         category_list.append(category.to_dict())
     data = {
         "user": user.to_dict() if user else None,
         "news_dict_list": news_dict_list,
-        "category_list":category_list
+        "category_list": category_list
     }
 
     return render_template("news/index.html", data=data)

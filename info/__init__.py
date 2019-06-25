@@ -46,7 +46,7 @@ def create_app(config_name):
     # 设置session保护指定位置
     Session(app)
 
-    app.add_template_filter(do_index_class, "indexClass")
+    app.add_template_filter(do_index_class, "index_class")
 
     @app.after_request
     def after_request(response):
@@ -60,5 +60,8 @@ def create_app(config_name):
     # 图片验证码
     from info.modules.passport import passport_blu
     app.register_blueprint(passport_blu)
+
+    from info.modules.news import news_blu
+    app.register_blueprint(news_blu)
 
     return app
