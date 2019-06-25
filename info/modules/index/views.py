@@ -1,7 +1,7 @@
-from flask import render_template, current_app, session, request, jsonify
-from info import redis_store
+from flask import render_template, current_app,request, jsonify, g
 from info.models import User, News, Category
 from info.utils.captcha.response_code import RET
+from info.utils.common import user_login_data
 from . import inex_blu
 
 
@@ -44,14 +44,16 @@ def news_list():
 
 # 首页
 @inex_blu.route('/')
+@user_login_data
 def index():
-    user_id = session.get("user_id", None)
-    user = None
-    if user_id:
-        try:
-            user = User.query.get(user_id)
-        except Exception as e:
-            current_app.logger.error(e)
+    # user_id = session.get("user_id", None)
+    # user = None
+    # if user_id:
+    #     try:
+    #         user = User.query.get(user_id)
+    #     except Exception as e:
+    #         current_app.logger.error(e)
+    user = g.user
     # 右侧新闻排行的逻辑
     news_list = []
     try:
