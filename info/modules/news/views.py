@@ -1,5 +1,5 @@
-from info import constants
-from info.models import User, News
+from info import constants, db
+from info.models import User, News, Comment
 from info.modules.news import news_blu
 from flask import render_template, session, current_app, g, abort, jsonify, request
 
@@ -123,3 +123,55 @@ def collect_news():
             # 添加新闻到用户收藏列表中
             user.collection_news.append(news)
     return jsonify(errno=RET.OK, errmsg="操作成功")
+
+
+@news_blu.route("/news_comment", methods=["POST"])
+@user_login_data
+def news_comment():
+    """评论新闻或者回复某条新闻下指定的评论"""
+    user = g.user
+    if not user:
+        return jsonify(errno=RET.SESSIONERR, errmsg="用户未登录")
+
+    # 1.取到请求参数
+    news_id = request.json.get("news_id")
+    comment_content = request.json.get("comment")
+    parent_id = request.json.get("parent_id")
+
+    # 2判断参数
+    if not all([news_id, comment_content]):
+        return jsonify(errno=RET.PARAMERR, reemsg="参数错误")
+
+    try:
+        news_id = int(news_id)
+        if parent_id:
+            parent_id = int(parent_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    # 查询新闻，并判断新闻是否存在
+    try:
+        news = News.query.get(news_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据查询错误")
+
+    if not news:
+        return jsonify(errno=RET.NODATA, errmsg="未查询到新闻数据")
+
+    # 3.初始化评论模型，并赋值
+    comment = Comment()
+    comment.user_id = user.id
+    comment.news_id = news_id
+    comment.content = comment_content
+    if parent_id:
+        comment.parent_id = parent_id
+    # 添加到数据库
+    try:
+        db.session.add(comment)
+        db.session.commit()
+    except Exception as e:
+        current_app.logger.error(e)
+        db.session.rollback()
+    return jsonify(errno=RET.OK, errmsg="ok", data=comment.to_dict())
