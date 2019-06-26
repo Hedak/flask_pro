@@ -17,38 +17,40 @@
             <span class="time_souce fl">{{ data.create_time }}来源: {{ data.news.source }}</span>
             <span class="comment fr">{{ data.news.comments_count }}</span>
         </div>
-            {{ data.news.content|safe }}
+        {{ data.news.content|safe }}
 
-    <a href="javascript:;" class="collected block-center" data-newid="{{ data.news.id }}" style="display: {% if data.is_collected %} block
-    {% else %} none {% endif %};"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
-    <a href="javascript:;" class="collection block-center" data-newid="{{ data.news.id }}" style="display: {% if data.is_collected %} none
-        {% else %} block {% endif %};">收藏</a>
+        <a href="javascript:;" class="collected block-center" data-newid="{{ data.news.id }}"
+           style="display: {% if data.is_collected %} block
+           {% else %} none {% endif %};"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
+        <a href="javascript:;" class="collection block-center" data-newid="{{ data.news.id }}"
+           style="display: {% if data.is_collected %} none
+           {% else %} block {% endif %};">收藏</a>
 
-{#        <a href="javascript:;" class="collection block-center">收藏</a>#}
-{#        <a href="javascript:;" class="collected block-center" style="display: none"><span class="out">已收藏</span><span class="over">取消收藏</span></a>#}
+        {#        <a href="javascript:;" class="collection block-center">收藏</a>#}
+        {#        <a href="javascript:;" class="collected block-center" style="display: none"><span class="out">已收藏</span><span class="over">取消收藏</span></a>#}
 
 
-         {% if data.user %}
-        <form action="" class="comment_form" data-newsid="{{ data.news.id }}">
-            <div class="person_pic">
-                <img src="{% if data.user.avatar_url %}
+        {% if data.user %}
+            <form action="" class="comment_form" data-newsid="{{ data.news.id }}">
+                <div class="person_pic">
+                    <img src="{% if data.user.avatar_url %}
                     {{ data.user.avatar_url }}
                 {% else %}
                     ../static/news/images/person01.png
                 {% endif %}" alt="用户图标">
+                </div>
+                <textarea placeholder="请发表您的评论" class="comment_input"></textarea>
+                <input type="submit" name="" value="评 论" class="comment_sub">
+            </form>
+        {% else %}
+            <div class="comment_form_logout">
+                登录发表你的评论
             </div>
-            <textarea placeholder="请发表您的评论" class="comment_input"></textarea>
-            <input type="submit" name="" value="评 论" class="comment_sub">
-        </form>
-    {% else %}
-        <div class="comment_form_logout">
-            登录发表你的评论
-        </div>
-    {% endif %}
+        {% endif %}
 
-    <div class="comment_count">
-        {{ data.news.comments_count }}条评论
-    </div>
+        <div class="comment_count">
+            {{ data.news.comments_count }}条评论
+        </div>
 
 
         <div class="comment_list_con">
@@ -72,7 +74,19 @@
                         </div>
                     {% endif %}
                     <div class="comment_time fl">{{ comment.create_time }}</div>
-                    <a href="javascript:;" class="comment_up {% if comment.is_like %}has_comment_up{% endif %} fr" data-commentid="{{ comment.id }}" data-newsid="{{ comment.news_id }}">赞</a>
+{#                    <a href="javascript:;" class="comment_up {% if comment.is_like %}has_comment_up{% endif %} fr" data-commentid="{{ comment.id }}" data-newsid="{{ comment.news_id }}">赞</a>#}
+                    <a href="javascript:;" class="comment_up
+                        {% if comment.is_like %}
+                            has_comment_up
+                        {% endif %} fr"
+                           data-commentid="{{ comment.id }}"
+                           data-likecount="{{ comment.like_count }}"
+                           data-newsid="{{ data.news.id }}">
+                        {% if comment.like_count > 0 %}
+                            {{ comment.like_count }}
+                        {% else %}
+                            赞
+                    {% endif %}</a>
                     <a href="javascript:;" class="comment_reply fr">回复</a>
                     <form class="reply_form fl" data-commentid="{{ comment.id }}" data-newsid="{{ data.news.id }}">
                         <textarea class="reply_input"></textarea>
