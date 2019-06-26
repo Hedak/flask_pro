@@ -61,12 +61,23 @@ def news_detail(news_id):
         # collection_news 后面可以不用加all,因为sqlalchemy会在使用的时候去自动加载
         if news in user.collection_news:
             is_collected = True
+    # 查询评论数据
+    comments = []
+    try:
+        comments = Comment.query.filter(Comment.news_id == news_id).order_by(Comment.create_time.desc()).all()
+    except Exception as e:
+        current_app.looger.error(e)
+
+    comment_dict_list = []
+    for comment in comments:
+        comment_dict_list.append(comment.to_dict())
 
     data = {
         "user": user.to_dict() if user else None,
         "news_dict_list": news_dict_list,
         "news": news.to_dict(),
-        "is_collected": is_collected
+        "is_collected": is_collected,
+        "comments": comment_dict_list
 
     }
     return render_template("news/detail.html", data=data)
