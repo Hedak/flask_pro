@@ -1,4 +1,4 @@
-from flask import render_template, current_app,request, jsonify, g
+from flask import render_template, current_app, request, jsonify, g
 from info.models import User, News, Category
 from info.utils.captcha.response_code import RET
 from info.utils.common import user_login_data
