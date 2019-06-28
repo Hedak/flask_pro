@@ -101,3 +101,45 @@ def pass_info():
     user.password = new_password
 
     return jsonify(errno=RET.OK, errmsg="密码保存成功")
+
+
+@profile_blue.route("/collection")
+@user_login_data
+def user_collection():
+    """用户收藏新闻"""
+
+    # 1获取参数
+    page = request.args.get("p", 1)
+
+    # 判断参数
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        page = 1
+
+    # 查询用户指定页数收藏的新闻
+    user = g.user
+
+    new_list = []
+    total_page = 1
+    current_page = 1
+    try:
+        paginate = user.collection_news.paginate(page, constants.USER_COLLECTION_MAX_NEWS, False)
+        current_page = paginate.page
+        total_page = paginate.pages
+        new_list = paginate.items
+    except Exception as e:
+        current_app.logger.error(e)
+
+    new_dict_list = []
+    for news in new_list:
+        new_dict_list.append(news.to_basic_dict())
+
+    data = {
+        "total_page": total_page,
+        "current_page": current_page,
+        "collections": new_dict_list
+    }
+
+    return render_template("news/user_collection.html", data=data)
