@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block titleBlock %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="../static/news/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../static/news/css/main.css">
-    <script type="text/javascript" src="../static/news/js/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="../static/news/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/news/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../static/news/css/main.css">
+    <script type="text/javascript" src="../../static/news/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../static/news/js/main.js"></script>
     {% block scriptBlock %}
 
     {% endblock %}
@@ -30,7 +30,7 @@
                 <!-- 用户登录后显示下面，隐藏上面 -->
                 <div class="user_login fr">
                     <img src="{% if data.user.avatar_url %} data.user_info.avatar_url {% else %}../../static/news/images/person01.png{% endif %}" class="lgin_pic">
-                    <a href="#">{{ data.user.nick_name }}</a>
+                    <a href="#" id="nick_name">{{ data.user.nick_name }}</a>
                     <a href="javascript:;" onclick="logout()">退出</a>
                 </div>
             {% else %}
