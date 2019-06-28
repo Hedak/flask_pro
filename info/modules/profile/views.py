@@ -1,4 +1,5 @@
 from info import constants
+from info.models import Category
 from info.modules.profile import profile_blue
 from flask import render_template, g, redirect, request, jsonify, current_app
 
@@ -143,3 +144,23 @@ def user_collection():
     }
 
     return render_template("news/user_collection.html", data=data)
+
+
+@profile_blue.route("/news_release")
+def news_release():
+    """新闻发布的页面"""
+
+    # 加载新闻分类数据
+    categories = []
+    try:
+        categories = Category.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+
+    category_dict_list = []
+    for category in categories:
+        category_dict_list.append(category.to_dict())
+
+    # 移除分类“最新”
+    category_dict_list.pop(0)
+    return render_template("news/user_news_release.html", data={"categories": category_dict_list})
