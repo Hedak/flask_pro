@@ -52,6 +52,7 @@ def base_info():
 @profile_blue.route("/pic_info", methods=["POST", "GET"])
 @user_login_data
 def pic_info():
+    """修改头像"""
     user = g.user
     if request.method == "GET":
         return render_template("news/user_pic_info.html", data={"user": g.user.to_dict()})
@@ -74,3 +75,29 @@ def pic_info():
     # 3.保存头像地址
     user.avatar_url = key
     return jsonify(errno=RET.OK, errmsg="ok", data={"avatar_url": constants.QINIU_DOMIN_PREFIX + key})
+
+
+@profile_blue.route("/pass_info", methods=["GET", "POST"])
+@user_login_data
+def pass_info():
+    if request.method == "GET":
+        return render_template("news/user_pass_info.html", data={"user": g.user.to_dict()})
+
+    # 如果是post方式请求，则表示修改密码
+    oid_password = request.json.get("old_password")
+    new_password = request.json.get("new_password")
+    # new_password2 = request.json.get("new_password2")
+
+    # 2校验参数
+    if not all([oid_password, new_password]):
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    # 3判断旧密码是否正确
+    user = g.user
+    if not user.check_password(oid_password):
+        return jsonify(errno=RET.PWDERR, errmsg="原密码输入错误")
+
+    # 设置新密码
+    user.password = new_password
+
+    return jsonify(errno=RET.OK, errmsg="密码保存成功")
