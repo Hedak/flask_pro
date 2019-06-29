@@ -182,19 +182,22 @@ $(function () {
                 success: function (resp) {
                     if (resp.errno == "0") {
                         // 更新点赞按钮图标
-                        var like_count=$this.attr("data-likecount")
+                        var like_count = $this.attr("data-likecount")
+                        if (like_count == undefined) {
+                            like_count = 0
+                        }
                         if (action == "add") {
-                            like_count=parseInt(like_count)+1
+                            like_count = parseInt(like_count) + 1
                             // 代表是点赞
                             $this.addClass('has_comment_up')
                         } else {
-                            like_count=parseInt(like_count)-1
+                            like_count = parseInt(like_count) - 1
                             $this.removeClass('has_comment_up')
                         }
-                        $this.attr("data-likecount",like_count)
-                        if(like_count==0){
+                        $this.attr("data-likecount", like_count)
+                        if (like_count == 0) {
                             $this.html("赞")
-                        }else {
+                        } else {
                             $this.html(like_count)
                         }
                     } else if (resp.errno == "4101") {
