@@ -5379,3 +5379,16 @@ INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:17:32] "GET /favicon.ico HTTP
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:17:41] "GET /static/admin/html/user_list.html HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:17:41] "GET /static/admin/css/jquery.pagination.css HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:17:41] "GET /static/admin/js/jquery.pagination.min.js HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-411-441
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:36:51] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:36:52] "GET /news_list?cid=1&page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:03] "POST /passport/login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:18] "GET /admin/login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:24] "POST /admin/login HTTP/1.1" 302 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:24] "GET /admin/index HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:24] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:43] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:46] "GET /admin/user_count HTTP/1.1" 200 -
