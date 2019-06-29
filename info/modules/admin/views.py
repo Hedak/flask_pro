@@ -1,5 +1,5 @@
-from datetime import datetime
 import time
+from datetime import datetime, timedelta
 
 from flask import current_app, g
 from flask import redirect
@@ -81,18 +81,44 @@ def user_count():
     except Exception as e:
         current_app.logger.error(e)
 
-    #日增数
-    day_count=0
-    begin_day_data=datetime.strptime(('%d-%02d-%02d' % (t.tm_year, t.tm_mon, t.tm_mday)), "%Y-%m-%d")
+    # 日增数
+    day_count = 0
+    begin_day_data = datetime.strptime(('%d-%02d-%02d' % (t.tm_year, t.tm_mon, t.tm_mday)), "%Y-%m-%d")
     try:
         day_count = User.query.filter(User.is_admin == False, User.create_time > begin_day_data).count()
     except Exception as e:
         current_app.logger.error(e)
 
-    data={
+    # 折线图数据
+    active_time = []
+    active_count = []
+
+    # 取到今天的时间字符串
+    today_date_str = ('%d-%02d-%02d' % (t.tm_year, t.tm_mon, t.tm_mday))
+    # 转成事件对象
+    today_date = datetime.strptime(today_date_str, "%Y-%m-%d")
+
+    for i in range(0, 31):
+        # 取到某一天的0点0分
+        begin_date = today_date - timedelta(days=i)
+        # 取到下一天的0点0分
+        end_date = today_date - timedelta(days=(i - 1))
+        count = User.query.filter(User.is_admin == False, User.last_login >= begin_date,
+                                  User.last_login < end_date).count()
+        active_count.append(count)
+        active_time.append(begin_date.strftime('%Y-%m-%d'))
+
+    # User.query.filter(User.is_admin == False, User.last_login >= 今天0点0分, User.last_login < 今天24点).count()
+    # 反转，让最近的一天显示在最后
+    active_time.reverse()
+    active_count.reverse()
+
+    data = {
         "total_count": total_count,
         "mon_count": mon_count,
         "day_count": day_count,
+        "active_time": active_time,
+        "active_count": active_count
     }
 
-    return render_template("admin/user_count.html",data=data)
+    return render_template("admin/user_count.html", data=data)

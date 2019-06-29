@@ -5392,3 +5392,14 @@ INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:24] "GET /admin/index HTTP
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:24] "GET /admin/user_count HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:43] "GET /admin/user_count HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:37:46] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-411-441
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:50:51] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:50:51] "GET /news_list?cid=1&page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:50:58] "GET /admin/login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:51:04] "POST /admin/login HTTP/1.1" 302 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:51:04] "GET /admin/index HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:51:05] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 19:51:27] "GET /admin/user_count HTTP/1.1" 200 -
