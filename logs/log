@@ -5624,3 +5624,20 @@ INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:44:04] "GET /user/info HTTP/1
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:44:04] "GET /user/base_info HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:44:04] "GET /user/info HTTP/1.1" 200 -
 INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:44:04] "GET /user/base_info HTTP/1.1" 200 -
+INFO _internal.py:88  * Restarting with stat
+WARNING _internal.py:88  * Debugger is active!
+INFO _internal.py:88  * Debugger PIN: 300-411-441
+INFO _internal.py:88  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:51:24] "GET / HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:51:25] "GET /news_list?cid=1&page=1 HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:51:31] "GET /admin/login HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:52:50] "POST /admin/login HTTP/1.1" 302 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:52:50] "GET /admin/index HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:52:51] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:52:53] "GET /admin/news_review HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:52:56] "GET /admin/news_review HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:53:09] "GET /admin/news_review?keywords=%E5%93%AA HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:58:01] "GET /admin/index HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:58:01] "GET /admin/user_count HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:58:01] "GET /favicon.ico HTTP/1.1" 200 -
+INFO _internal.py:88 127.0.0.1 - - [29/Jun/2019 20:58:02] "GET /admin/user_list HTTP/1.1" 200 -
