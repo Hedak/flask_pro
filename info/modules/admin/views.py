@@ -76,8 +76,12 @@ def user_count():
     # 月新增人数
     mon_count = 0
     t = time.localtime()
-    begin_mon_date = datetime.strptime(('%d-%02d-01' % (t.tm_year, t.tm_mon)), "%Y-%m-%d")
+    # begin_mon_date = datetime.strptime(('%d-%02d-01' % (t.tm_year, t.tm_mon)), "%Y-%m-%d")
+    begin_mon_date_str = '%d-%02d-01' % (t.tm_year, t.tm_mon)
+    # 将字符串转成datetime对象
+    begin_mon_date = datetime.strptime(begin_mon_date_str, "%Y-%m-%d")
     try:
+
         mon_count = User.query.filter(User.is_admin == False, User.create_time > begin_mon_date).count()
     except Exception as e:
         current_app.logger.error(e)
