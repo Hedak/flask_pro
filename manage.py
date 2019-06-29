@@ -11,19 +11,19 @@ from info.models import User
 
 app = create_app('development')
 # 设置项目运行参数
-manger = Manager(app)
+manager = Manager(app)
 # 将app与db关联
 Migrate(app, db)
 # 将迁移命令添加到manger中
-manger.add_command('db', MigrateCommand)
+manager.add_command('db', MigrateCommand)
 
 
-@manger.option('-n', '-name', dest='name')
-@manger.option('-p', '-password', dest="password")
+@manager.option('-n', '-name', dest="name")
+@manager.option('-p', '-password', dest="password")
 def createsuperuser(name, password):
     if not all([name, password]):
         print("参数不足")
-    user = User
+    user = User()
     user.nick_name = name
     user.mobile = name
     user.password = password
@@ -40,4 +40,4 @@ def createsuperuser(name, password):
 
 
 if __name__ == '__main__':
-    manger.run()
+    manager.run()
