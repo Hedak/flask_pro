@@ -1,17 +1,17 @@
 {% extends "news/base.html" %}
 
 {% block titleBlock %}
-用户概况
+    用户概况
 {% endblock %}
 
 {% block cssBlock %}
-<link rel="stylesheet" type="text/css" href="../../static/news/css/jquery.pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../static/news/css/jquery.pagination.css">
 {% endblock %}
 
 {% block scriptBlock %}
 
-<script type="text/javascript" src="../../static/news/js/jquery.pagination.min.js"></script>
-<script type="text/javascript" src="../../static/news/js/other.js"></script>
+    <script type="text/javascript" src="../../static/news/js/jquery.pagination.min.js"></script>
+    <script type="text/javascript" src="../../static/news/js/other.js"></script>
 {% endblock %}
 
 {% block contentBlock %}
@@ -37,43 +37,45 @@
         </ul>
 
         <div class="focus_other">
-            <a href="javascript:;" class="focus block-center" data-userid="{{ data.other_info.id }}" style="display: {% if data.is_followed %}none
-            {% else %}block
-            {% endif %}">关注</a><br>
-            <a href="javascript:;" class="focused block-center" data-userid="{{ data.other_info.id }}" style="display: {% if data.is_followed %}block
-            {% else %}none
-            {% endif %}"><span class="out">已关注</span><span class="over">取消关注</span></a>
+            <a href="javascript:;" class="focus block-center" data-userid="{{ data.other_info.id }}"
+               style="display: {% if data.is_followed %}none
+               {% else %}block
+               {% endif %}">关注</a><br>
+            <a href="javascript:;" class="focused block-center" data-userid="{{ data.other_info.id }}"
+               style="display: {% if data.is_followed %}block
+               {% else %}none
+               {% endif %}"><span class="out">已关注</span><span class="over">取消关注</span></a>
         </div>
 
     </div>
 
     <div class="user_con fr">
-            <div class="other_collect">
-                <h3>他的文章</h3>
-                <ul class="article_list">
-                    <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
-                    <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
-                    <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
-                    <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
-                    <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
-                    <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
-                </ul>
+        <div class="other_collect">
+            <h3>他的文章</h3>
+            <ul class="article_list">
+                <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
+                <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
+                <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
+                <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
+                <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
+                <li><a href="#">智能音箱“不智能”：这次轮到三星语音助手Bixby被吐槽了</a><span>2018-1-17</span></li>
+            </ul>
 
-                <div id="pagination" class="page"></div>
-                <script>
-                    $(function(){
-                        $("#pagination").pagination({
-                            currentPage: 2,
-                            totalPage: 3,
-                            callback: function(current) {
-                                alert('ok!');
-                            }
-                        });
+            <div id="pagination" class="page"></div>
+            <script>
+                $(function () {
+                    $("#pagination").pagination({
+                        currentPage: 2,
+                        totalPage: 3,
+                        callback: function (current) {
+                            getNewsList(current);
+                        }
                     });
-                </script>
-            </div>
-
+                });
+            </script>
         </div>
+
+    </div>
 {% endblock %}
 
 {% block rankBlock %}

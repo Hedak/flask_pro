@@ -339,3 +339,51 @@ def other_info():
         "other_info": other.to_dict()
     }
     return render_template('news/other.html', data=data)
+
+
+@profile_blue.route('/other_news_list')
+def other_news_list():
+    """返回指定用户的发布的新闻"""
+
+    # 1. 取参数
+    other_id = request.args.get("user_id")
+    page = request.args.get("p", 1)
+
+    # 2. 判断参数
+    try:
+        page = int(page)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    try:
+        other = User.query.get(other_id)
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据查询失败")
+
+    if not other:
+        return jsonify(errno=RET.NODATA, errmsg="当前用户不存在")
+
+    try:
+        paginate = other.news_list.paginate(page, constants.USER_COLLECTION_MAX_NEWS, False)
+        # 获取当前页数据
+        news_li = paginate.items
+        # 获取当前页
+        current_page = paginate.page
+        # 获取总页数
+        total_page = paginate.pages
+    except Exception as e:
+        current_app.logger.error(e)
+        return jsonify(errno=RET.DBERR, errmsg="数据查询失败")
+
+    news_dict_li = []
+    for news_item in news_li:
+        news_dict_li.append(news_item.to_basic_dict())
+
+    data = {
+        "news_list": news_dict_li,
+        "total_page": total_page,
+        "current_page": current_page
+    }
+    return jsonify(errno=RET.OK, errmsg="OK", data=data)
