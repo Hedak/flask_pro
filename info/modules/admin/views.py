@@ -399,3 +399,27 @@ def news_edit_detail():
     news.category_id = category_id
 
     return jsonify(errno=RET.OK, errmsg="OK")
+
+
+@admin_blu.route("/news_type")
+def news_type():
+    # 查询新闻分类
+    try:
+        categories = Category.query.all()
+    except Exception as e:
+        current_app.logger.error(e)
+        return render_template("admin/news_type.html", errmsg="数据查询错误")
+
+    category_dict_list = []
+    for category in categories:
+        # 取到分类的字典
+        cate_dict = category.to_dict()
+        category_dict_list.append(cate_dict)
+
+    # 移除最新的分类
+    category_dict_list.pop(0)
+
+    data = {
+        "categories": category_dict_list
+    }
+    return render_template("admin/news_type.html", data=data)
