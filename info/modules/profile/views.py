@@ -187,7 +187,7 @@ def news_release():
 
     # 校验参数
     # 2.1 判断数据是否有值
-    if not all([title, source, digest, content, index_image, category_id]):
+    if not all([title, source, digest, content,  category_id]):
         return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
 
     try:
@@ -197,19 +197,20 @@ def news_release():
         return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
 
     # 3取到图片，将图片传到七牛云上
-    try:
-        index_image_data = index_image.read()
-        key = storage(index_image_data)
-    except Exception as e:
-        current_app.logger.error(e)
-        return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
+    # try:
+    #     index_image_data = index_image.read()
+    #     key = storage(index_image_data)
+    # except Exception as e:
+    #     current_app.logger.error(e)
+    #     return jsonify(errno=RET.PARAMERR, errmsg="参数有误")
 
     news = News()
     news.title = title
     news.digest = digest
     news.source = source
     news.content = content
-    news.index_image_url = constants.QINIU_DOMIN_PREFIX + key
+    # news.index_image_url = constants.QINIU_DOMIN_PREFIX + key
+    news.index_image_url = "https://www.baidu.com/img/bd_logo1.png?where=super"
     news.category_id = category_id
     news.user_id = g.user.id
     # 1代表审核状态
