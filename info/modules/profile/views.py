@@ -304,3 +304,10 @@ def user_follow():
     }
 
     return render_template('news/user_follow.html', data=data)
+
+
+@profile_blue.route("/other_info")
+@user_login_data
+def other_info():
+    data = {"user": g.user.to_dict() if g.user else None}
+    return render_template('news/other.html', data=data)
