@@ -8,7 +8,7 @@ from flask import request
 from flask import session
 from flask import url_for
 
-from info import constants
+from info import constants, db
 from info.models import User, News, Category
 from info.modules.admin import admin_blu
 from info.utils.captcha.response_code import RET
@@ -401,25 +401,55 @@ def news_edit_detail():
     return jsonify(errno=RET.OK, errmsg="OK")
 
 
-@admin_blu.route("/news_type")
+@admin_blu.route("/news_type", methods=["POST", "GET"])
 def news_type():
-    # 查询新闻分类
-    try:
-        categories = Category.query.all()
-    except Exception as e:
-        current_app.logger.error(e)
-        return render_template("admin/news_type.html", errmsg="数据查询错误")
+    if request.method == "GET":
+        # 查询新闻分类
+        try:
+            categories = Category.query.all()
+        except Exception as e:
+            current_app.logger.error(e)
+            return render_template("admin/news_type.html", errmsg="数据查询错误")
 
-    category_dict_list = []
-    for category in categories:
-        # 取到分类的字典
-        cate_dict = category.to_dict()
-        category_dict_list.append(cate_dict)
+        category_dict_list = []
+        for category in categories:
+            # 取到分类的字典
+            cate_dict = category.to_dict()
+            category_dict_list.append(cate_dict)
 
-    # 移除最新的分类
-    category_dict_list.pop(0)
+        # 移除最新的分类
+        category_dict_list.pop(0)
 
-    data = {
-        "categories": category_dict_list
-    }
-    return render_template("admin/news_type.html", data=data)
+        data = {
+            "categories": category_dict_list
+        }
+        return render_template("admin/news_type.html", data=data)
+
+    # 添加分类
+    # 取参数
+    cname = request.json.get("name")
+    # 如果传了cid，代表是编辑已存在的分类
+    cid = request.json.get("id")
+
+    if not cname:
+        return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+    if cid:
+        # 有分类id代表查询相关的数据
+        try:
+            cid = int(cid)
+            category = Category.query.get(cid)
+        except Exception as e:
+            current_app.logger.error(e)
+            return jsonify(errno=RET.PARAMERR, errmsg="参数错误")
+
+        if not category:
+            return jsonify(errno=RET.PARAMERR, errmsg="未查到分类数据")
+
+        category.name = cname
+    else:
+        category = Category()
+        category.name = cname
+        db.session.add(category)
+
+    return jsonify(errno=RET.OK, errmsg="ok")

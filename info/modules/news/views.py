@@ -76,7 +76,7 @@ def news_detail(news_id):
             comment_ids = [comment.id for comment in comments]
             # 2再查出当前评论中哪些评论被当前用户所点赞
             comment_likes = CommentLike.query.filter(CommentLike.comment_id.in_(comment_ids),
-                                                      CommentLike.user_id == g.user.id).all()
+                                                     CommentLike.user_id == g.user.id).all()
             # 3取到所有被点赞的评论id
             comment_like_ids = [comment_like.comment_id for comment_like in comment_likes]
         except Exception as e:
@@ -92,12 +92,20 @@ def news_detail(news_id):
 
         comment_dict_list.append(comment_dict)
 
+    is_followed = False
+    # if 当前新闻所有者，并且当前登录用户已经关注过这个用户
+    if news.user and user:
+        # if user 是否关注过news.user
+        if news.user in user.followers:
+            is_followed = True
+
     data = {
         "user": user.to_dict() if user else None,
         "news_dict_list": news_dict_list,
         "news": news.to_dict(),
         "is_collected": is_collected,
-        "comments": comment_dict_list
+        "comments": comment_dict_list,
+        "is_followed": is_followed
 
     }
     return render_template("news/detail.html", data=data)
