@@ -1,7 +1,7 @@
 from info import constants, db
-from info.models import Category, News
+from info.models import Category, News, User
 from info.modules.profile import profile_blue
-from flask import render_template, g, redirect, request, jsonify, current_app
+from flask import render_template, g, redirect, request, jsonify, current_app, abort
 
 from info.utils.captcha.response_code import RET
 from info.utils.common import user_login_data
@@ -309,5 +309,33 @@ def user_follow():
 @profile_blue.route("/other_info")
 @user_login_data
 def other_info():
-    data = {"user": g.user.to_dict() if g.user else None}
+    user = g.user
+
+    # 去查询其他人的用户信息
+    other_id = request.args.get("user_id")
+
+    if not other_id:
+        abort(404)
+
+    # 查询指定id的用户信息
+    try:
+        other = User.query.get(other_id)
+    except Exception as e:
+        current_app.logger.error(e)
+
+    if not other:
+        abort(404)
+
+    is_followed = False
+    # if 当前新闻有作者，并且 当前登录用户已关注过这个用户
+    if other and user:
+        # if user 是否关注过 news.user
+        if other in user.followed:
+            is_followed = True
+
+    data = {
+        "is_followed": is_followed,
+        "user": g.user.to_dict() if g.user else None,
+        "other_info": other.to_dict()
+    }
     return render_template('news/other.html', data=data)
